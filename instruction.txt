@@ -1,0 +1,11 @@
+Final Exam Part 1 (Project #5)
+
+
+Details:
+ 
+Before you start on this, make sure you've heard back from us re: Homework #20. Once you hear back, you'll know which open-source library to move forward with. Your assignment is to build a working real-world application (or even a library) using the open-source code in question. It can be a big application, or it can be small. It can be server-side javascript or client side, it's up to you. The main point of this assignment is to get experience using the open-source project in question. The more you use and explore the functionality available in that library, the higher your grade will be.
+
+
+Turning it In:
+
+One of the first slides in this course is called "How to Turn in Homework" review that slide for details on how to send your assignment to us (and receive a grade).
