@@ -1,0 +1,40 @@
+body{
+    display: block;
+    margin: auto;
+    background-color: linen;
+    width: 80%;
+    font-size: 62.5%;
+}
+#wrapper{
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 20% 80%;
+    grid-gap: 1px;
+}
+#b1{
+    display: block;
+    grid-column: 1/4;
+    grid-row: 1/2;
+    background-color: #444444;
+}
+h1{
+    color: #aaaaaa;
+    font-size: 2.4rem;
+    text-align: center;
+    margin:auto ;
+    width: 40%;
+    padding: 5px;
+}
+#b2{
+    background-color: #aaaaaa;
+    color: gainsboro;
+}
+#inputType{
+    background-color: #f5f5ff;
+}
+select{
+    display: block;
+    margin: auto;
+    width: 80%;
+    margin-top: 5px;
+}

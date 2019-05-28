@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Chart Using Chart.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="node_modules/chart.js/dist/Chart.js"></script>
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+<body>
+     <div id="wrapper">
+         <div class="box" id="b1">
+              <h1>Chart Application Using Chart.js</h1>
+         </div>
+         <div class="box" id="b2">
+                <div id="inputDiv">
+                    <label>
+                        <select id="select">
+                            <option value="polarArea">Polar Area</option>
+                            <option value="pie">pie</option>
+                            <option value="bar">bar</option>
+                            <option value="line">line</option>
+                            <option value="radar">radar</option>
+                        </select>
+                    </label>
+                </div>
+         </div>
+         <div class="box" id="b3">
+             <canvas id="myChart"></canvas>
+
+         </div>
+     </div>
+     <footer >
+         <!--<script src="node_modules/chart.js/dist/Chart.js"></script>-->
+         <!--<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>-->
+         <script src="myScript.js"></script>
+     </footer>
+</body>
+</html>
