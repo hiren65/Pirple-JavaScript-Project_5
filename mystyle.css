@@ -29,6 +29,12 @@ h1{
     background-color: #aaaaaa;
     color: gainsboro;
 }
+span{
+    text-align: center;
+    font-size: 1.24rem;
+    color: #f5f5ff;
+    padding: 5px;
+}
 #inputType{
     background-color: #f5f5ff;
 }
@@ -37,4 +43,15 @@ select{
     margin: auto;
     width: 80%;
     margin-top: 5px;
+    height: 25px;
+    background-color: darkseagreen;
+    font-size: 1rem;
+    border: #333333 solid 1px;
+}
+option{
+    text-align: center;
+    font-size:1rem ;
+}
+#b3{
+    background-color: cornsilk;
 }
