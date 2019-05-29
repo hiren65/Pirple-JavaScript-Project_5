@@ -32,7 +32,11 @@ function drawMe() {
                 datasets: [
                     {
                         label: "Population (millions)",
-                        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+                        backgroundColor: ["rgba(255,99,132,0.6)",
+                                          "rgba(54,162,232,0.6)",
+                                          "rgba(255,206,66,0.6)",
+                                          "rgba(75,192,192,0.6)",
+                                          "rgba(255,99,132,0.6)"],
                         data: [2478,5267,734,784,100],
                         borderWidth:1,
                         borderColor:"silver",
@@ -62,6 +66,29 @@ function drawMe() {
         });
 
 
+}
+
+let ccc = document.getElementById("config-div");
+let pressBtn1 = document.getElementById("config-btn");
+pressBtn1.addEventListener("click",showConfig);
+function showConfig() {
+    ccc.innerHTML = `
+                     <span>Title</span>
+                     <input type="text" id="tlt1">
+                     
+                     <button id="btn01">Apply</button>
+    `;
+    let apply = document.getElementById("btn01");
+    apply.addEventListener("click",pushChange);
+}
 
 
+function pushChange() {
+
+    title = document.getElementById("tlt1").value;
+    if (title === "" || title === null){
+        alert("Field can't be blank");
+        return;
+    }
+   drawMe();
 }

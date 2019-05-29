@@ -76,6 +76,16 @@ img{
     width: 60%;
     margin: 10px auto 10px auto;
 }
-#myChart{
-
+#config-btn,#btn01{
+    width: 90%;
+    height: 30px;
+    display: block;
+    margin: 10px auto;
+}
+#tlt1{
+    display: block;
+    margin: 5px auto;
+    height: 25px;
+    border: #444444;
+    text-align: center;
 }
