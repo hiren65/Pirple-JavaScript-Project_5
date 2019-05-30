@@ -29,7 +29,7 @@ h1{
     background-color: #aaaaaa;
     color: gainsboro;
     grid-column: 1/2;
-    grid-row: 1/3;
+    grid-row: 1/4;
 }
 
 
@@ -88,4 +88,40 @@ img{
     height: 25px;
     border: #444444;
     text-align: center;
+}
+#b4{
+    grid-column: 2/4;
+    grid-row: 3/4;
+    background-color: #444444;
+    min-height: 100px;
+}
+#dataFill{
+    width: 96%;
+    height: auto;
+
+}
+#dataApplyBtn,#dataClearBtn{
+    width: 150px;
+    height: 30px;
+    margin: 10px auto 10px auto;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#input11,#realData{
+    margin: 5px;
+    width: 60%;
+    height: 30px;
+    font-size: 1.22rem;
+}
+#input22{
+    margin: 5px;
+    width: 60%;
+    height: 30px;
+    font-size: 1.22rem;
+    background-color: #f5f5ff;
+}
+#addColor{
+    margin-left: 5px;
+    width: 80px;
 }
