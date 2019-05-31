@@ -14,6 +14,12 @@ let arrData = [2478,5267,734,784,100];
 let strArr = [];
 
 let selected = document.getElementById("select");
+let mode = 'point';
+
+let legendPosition = "top";
+let borderColor = 'black';
+let toolTip_bodyFont_size = 12;
+let legend_fontSize = 14;
 window.onload = function(){
      drawMe();
 };
@@ -44,7 +50,7 @@ function drawMe() {
                         backgroundColor: arrColor,
                         data: arrData,
                         borderWidth:1,
-                        borderColor:"silver",
+                        borderColor:borderColor,
                         hoverBorderColor:"blue",
                         hoverBorderWidth:"1"
                     }
@@ -59,12 +65,15 @@ function drawMe() {
 
                 },
                 tooltips: {
-                    mode: 'point'
+                    mode: mode,
+                    bodyFontSize:toolTip_bodyFont_size
+
                 },
                 legend:{
                     display:true,
-                    position:'right',
-                    fontColor: 'black'
+                    position:legendPosition,
+                    fontColor: 'black',
+                    labels:{fontSize:legend_fontSize}
                 }
             }
 
@@ -80,6 +89,32 @@ function showConfig() {
     ccc.innerHTML = `
                      <span>Title</span>
                      <input type="text" id="tlt1">
+                     <br>
+                     <span class="allSpan">Tooltip Mode:</span>
+                     <label>
+                         <select id="tooltips">
+                             <option value="point">point</option>
+                             <option value="nearest">nearest</option>
+                             <option value="index">index</option>
+                             <option value="dataset">dataset</option>
+                         </select>
+                     </label>
+                     <br>
+                     <span class="allSpan">Tooltip Font size:</span>
+                    <input type="number" id="toolTip-fontSize" value="12"><br>
+                    
+                     <span class="allSpan">Legand:</span>
+                     <label>
+                         <select id="legend">
+                             <option value="top">top</option>
+                             <option value="left">left</option>
+                             <option value="bottom">bottom</option>
+                             <option value="right">right</option>
+                         </select>
+                     </label>
+                     <br>
+                     <span class="allSpan">Legend Font size:</span>
+                     <input type="number" id="legend-fontSize" value="12" ><br>
                      
                      
                      <button id="btn01">Apply</button>
@@ -93,6 +128,8 @@ let dataApplyBtn = document.getElementById("dataApplyBtn");
 dataApplyBtn.addEventListener("click",createDataAdd);
 function createDataAdd() {
     //alert();
+    //clearAllData();
+    strArr = [];arrColor = [];arrData = [];
     let input11 = document.getElementById("input11").value;
     arrA = input11.split(",");
 
@@ -101,7 +138,7 @@ function createDataAdd() {
 
     let realData = document.getElementById("realData").value;
     arrData = realData.split(",");
-
+    console.log(arrData);
     //alert(newValue);
 
 
@@ -117,7 +154,17 @@ function pushChange() {
         alert("Field can't be blank");
         return;
     }
-   drawMe();
+
+    mode = document.getElementById("tooltips").value;
+    legendPosition = document.getElementById("legend").value;
+
+    borderColor = document.getElementById("border-color").value;
+    //////////////////////////////////////////////////////////
+    legend_fontSize = parseInt( document.getElementById("legend-fontSize").value);
+    /////////////////////////////////////////////////////////
+    //alert(tooltip);
+    //createDataAdd();
+     drawMe();
 }
 let addColor = document.getElementById("addColor");
 addColor.addEventListener("click",addColorFromPicker);
@@ -133,7 +180,7 @@ let dataClear = document.getElementById("dataClearBtn");
 dataClear.addEventListener("click",clearAllData);
 function clearAllData(){
     strArr = [];arrColor = [];arrData = [];
-    document.getElementById("realData").value = "";
-    document.getElementById("input22").value = "";
-    document.getElementById("input11").value = "";
+    //document.getElementById("realData").value = "";
+    //document.getElementById("input22").value = "";
+    //document.getElementById("input11").value = "";
 }

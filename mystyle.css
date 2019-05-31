@@ -38,6 +38,7 @@ span{
     font-size: 1.24rem;
     color: #f5f5ff;
     padding: 5px;
+    margin-top: 10px;
 }
 #inputType{
     background-color: #f5f5ff;
@@ -124,4 +125,15 @@ img{
 #addColor{
     margin-left: 5px;
     width: 80px;
+}
+#border-color{
+    margin-top: 10px;
+}
+#toolTip-fontSize,#legend-fontSize{
+    //display: inline-block;
+    margin: 10px auto;
+    width: 50px;
+}
+.allSpan{
+    margin-top: 10px;
 }
