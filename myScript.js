@@ -19,6 +19,7 @@ let legend_fontSize = 14;
 let datasetFont_size = 14;
 let transparencyOfGraph = "50";
 let tooltip_TitleFont_size = 12;
+let yaxisBeginAtZero = true;
 window.onload = function(){
      drawMe();
 };
@@ -63,8 +64,15 @@ function drawMe() {
                     display: true,
                     text: title,
                     fontColor: 'olive',
-                    fontSize:23
+                    fontSize:23,
+                },
+                scales: {
+                    yAxes:[{
+                        ticks: {
 
+                            beginAtZero: yaxisBeginAtZero
+                        }
+                    }]
                 },
                 tooltips: {
                     mode: mode,
@@ -184,6 +192,14 @@ function pushChange() {
 
     tooltip_TitleFont_size =parseInt( document.getElementById("toolTip-title-fontSize").value);
     transparencyOfGraph = String (document.getElementById("transparency-graph").value);
+
+    let yaxisBeginAtZero1 =  document.getElementById("selectYaxis").value;
+    if (yaxisBeginAtZero1 === "yes"){
+        yaxisBeginAtZero = true;
+    } else {
+        yaxisBeginAtZero = false;
+    }
+    //alert(yaxisBeginAtZero);
 
      //alert(transparencyOfGraph);
      changeTransparencyInarrayColor(arrColor);
