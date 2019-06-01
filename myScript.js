@@ -32,7 +32,7 @@ function drawMe() {
 
         //alert();
         if (arrColor.length === 0){
-            alert("No Data");
+            alert("No Data?");
             return;
         }
         let myV = selected.options[selected.selectedIndex].value;
@@ -257,3 +257,67 @@ function changeTransparencyInarrayColor(myArray){
     document.getElementById("input22").value = arrColor;
 }
 
+
+///////////
+let countryArr = [];
+let valueArr = [];
+
+let arrTempColor = [];
+
+///////////
+let dataImp = document.getElementById("dataImport");
+dataImp.addEventListener("click",getCsvData);
+function getCsvData(){
+    countryArr = [];
+    valueArr = [];
+    d3.csv("myFile.csv", function(data) {
+        for (var i = 0; i < data.length; i++) {
+            //console.log(data[i].Country);
+            countryArr.push(data[i].Country);
+            valueArr.push(data[i].Value);
+            //console.log(data[i].Value);
+            let c1 = getRandomColor();
+            arrTempColor.push(c1);
+            arrColor = addTransfarencyInRndomColorArr(arrTempColor);
+        }
+    });
+    console.log(countryArr);
+    console.log(valueArr);
+
+    strArr = [];arrColor = [];arrData = [];
+    arrA = countryArr;arrData = valueArr;
+    //arrColor = randomColor(arrA);
+
+    console.log(arrColor);
+
+    //drawMe();
+    setTimeout(drawMe,3000);
+}
+
+function randomColor(arr) {
+    let arrTemp = [];
+    for (let i=0;i<arr.length;i++){
+        //let c1 = "#"+((1<<24)*Math.random()|0).toString(16);
+        let c1 = getRandomColor();
+        arrTemp.push(c1);
+    }
+    return arrTemp;
+}
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+function addTransfarencyInRndomColorArr(arr) {
+    let tt = [];
+    for (let i=0;i<arr.length;i++){
+        let cc1 = arr[i]+ transparencyOfGraph;
+        tt.push(cc1);
+    }
+    return tt;
+}
