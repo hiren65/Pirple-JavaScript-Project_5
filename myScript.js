@@ -18,6 +18,7 @@ let toolTip_bodyFont_size = 12;
 let legend_fontSize = 14;
 let datasetFont_size = 14;
 let transparencyOfGraph = "50";
+let tooltip_TitleFont_size = 12;
 window.onload = function(){
      drawMe();
 };
@@ -67,7 +68,8 @@ function drawMe() {
                 },
                 tooltips: {
                     mode: mode,
-                    bodyFontSize:toolTip_bodyFont_size
+                    bodyFontSize:toolTip_bodyFont_size,
+                    titleFontSize:tooltip_TitleFont_size
 
                 },
                 legend:{
@@ -88,7 +90,7 @@ let pressBtn1 = document.getElementById("config-btn");
 pressBtn1.addEventListener("click",showConfig);
 function showConfig() {
     ccc.innerHTML = `
-                     <span>Title</span>
+                     <span class="allSpan" id="title_1">Title:</span>
                      <input type="text" id="tlt1" value="Predicted world population (millions) in 2050">
                      <br>
                      <span class="allSpan">Tooltip Mode:</span>
@@ -103,6 +105,9 @@ function showConfig() {
                      <br>
                      <span class="allSpan">Tooltip Font size:</span>
                     <input type="number" id="toolTip-fontSize" value="12"><br>
+                    
+                    <span class="allSpan">Tooltip Title Font-size:</span>
+                    <input type="number" id="toolTip-title-fontSize" value="12"><br>
                     
                      <span class="allSpan">Legand:</span>
                      <label>
@@ -169,13 +174,15 @@ function pushChange() {
     mode = document.getElementById("tooltips").value;
     legendPosition = document.getElementById("legend").value;
 
+
+
     borderColor = document.getElementById("border-color").value;
     //////////////////////////////////////////////////////////
     legend_fontSize = parseInt( document.getElementById("legend-fontSize").value);
     /////////////////////////////////////////////////////////
     datasetFont_size = parseInt( document.getElementById("dataset-font-size").value);
 
-
+    tooltip_TitleFont_size =parseInt( document.getElementById("toolTip-title-fontSize").value);
     transparencyOfGraph = String (document.getElementById("transparency-graph").value);
 
      //alert(transparencyOfGraph);

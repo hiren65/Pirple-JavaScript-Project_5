@@ -35,7 +35,7 @@ h1{
 
 span{
     text-align: center;
-    font-size: 1.24rem;
+    font-size: 1.14rem;
     color: #f5f5ff;
     padding: 5px;
     margin-top: 10px;
@@ -44,14 +44,15 @@ span{
     background-color: #f5f5ff;
 }
 select{
-    display: block;
+    display: inline-block;
     margin: auto;
-    width: 80%;
+    //width: 80%;
     margin-top: 15px;
     height: 25px;
     background-color: darkseagreen;
     font-size: 1rem;
     border: #333333 solid 1px;
+    width: 45%;
 }
 option{
     text-align: center;
@@ -86,10 +87,13 @@ img{
 #tlt1{
     display: block;
     margin: 5px auto;
+    width: 90%;
     height: 25px;
-    border: #444444;
+    border: solid #100bf9 1px;
     text-align: center;
+    padding: 5px;
 }
+
 #b4{
     grid-column: 2/4;
     grid-row: 3/4;
@@ -129,11 +133,21 @@ img{
 #border-color{
     margin-top: 10px;
 }
-#toolTip-fontSize,#legend-fontSize,#dataset-font-size,#transparency-graph{
+#toolTip-fontSize,#legend-fontSize,#dataset-font-size,#transparency-graph,#toolTip-title-fontSize{
     //display: inline-block;
     margin: 10px auto;
     width: 50px;
+    text-align: center;
+    border: darkblue solid 1px;
+    background-color: rgba(230,212,230,0.35);
 }
 .allSpan{
     margin-top: 10px;
+}
+#title_1{
+    display: block;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    //border: 1px solid white;
 }
