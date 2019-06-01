@@ -129,7 +129,7 @@ img{
 #border-color{
     margin-top: 10px;
 }
-#toolTip-fontSize,#legend-fontSize{
+#toolTip-fontSize,#legend-fontSize,#dataset-font-size,#transparency-graph{
     //display: inline-block;
     margin: 10px auto;
     width: 50px;

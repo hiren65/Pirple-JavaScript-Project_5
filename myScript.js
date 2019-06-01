@@ -4,11 +4,7 @@ let createChart;
 let title = 'Predicted world population (millions) in 2050';
 
 let arrA = ["Africa", "Asia", "Europe", "Latin America", "North America"];
-let arrColor = ["rgba(255,99,132,0.6)",
-    "rgba(54,162,232,0.6)",
-    "rgba(255,206,66,0.6)",
-    "rgba(75,192,192,0.6)",
-    "rgba(55,99,32,0.6)"];
+let arrColor = ["#ff008050","#b6e9c850","#c1afef50","#c68f6f50","#127dcd50"];
 let arrData = [2478,5267,734,784,100];
 
 let strArr = [];
@@ -20,6 +16,8 @@ let legendPosition = "top";
 let borderColor = 'black';
 let toolTip_bodyFont_size = 12;
 let legend_fontSize = 14;
+let datasetFont_size = 14;
+let transparencyOfGraph = "50";
 window.onload = function(){
      drawMe();
 };
@@ -31,14 +29,17 @@ selected.addEventListener("click",drawMe);
 function drawMe() {
 
         //alert();
-
+        if (arrColor.length === 0){
+            alert("No Data");
+            return;
+        }
         let myV = selected.options[selected.selectedIndex].value;
         var grapharea = document.getElementById("myChart").getContext("2d");
         if (createChart){
             createChart.destroy();
         }
         Chart.defaults.global.defaultFontFamily = 'Lato';
-        Chart.defaults.global.defaultFontSize = 18;
+        Chart.defaults.global.defaultFontSize = datasetFont_size;
         Chart.defaults.global.defaultColor = '#777';
         createChart =   new Chart(grapharea, {
             type: myV,
@@ -88,7 +89,7 @@ pressBtn1.addEventListener("click",showConfig);
 function showConfig() {
     ccc.innerHTML = `
                      <span>Title</span>
-                     <input type="text" id="tlt1">
+                     <input type="text" id="tlt1" value="Predicted world population (millions) in 2050">
                      <br>
                      <span class="allSpan">Tooltip Mode:</span>
                      <label>
@@ -131,22 +132,32 @@ function createDataAdd() {
     //clearAllData();
     strArr = [];arrColor = [];arrData = [];
     let input11 = document.getElementById("input11").value;
+    if (input11 === ""){
+        alert("no Data found");
+        return;
+    }
     arrA = input11.split(",");
 
     let input22 = document.getElementById("input22").value;
+    if (input22 === ""){
+        alert("no Data found");
+        return;
+    }
     arrColor = input22.split(",");
 
     let realData = document.getElementById("realData").value;
+    if (realData === ""){
+        alert("no Data found");return;
+    }
     arrData = realData.split(",");
     console.log(arrData);
     //alert(newValue);
-
 
     drawMe();
     //alert(arr);
 }
 
-
+// config
 function pushChange() {
 
     title = document.getElementById("tlt1").value;
@@ -162,15 +173,27 @@ function pushChange() {
     //////////////////////////////////////////////////////////
     legend_fontSize = parseInt( document.getElementById("legend-fontSize").value);
     /////////////////////////////////////////////////////////
-    //alert(tooltip);
-    //createDataAdd();
+    datasetFont_size = parseInt( document.getElementById("dataset-font-size").value);
+
+
+    transparencyOfGraph = String (document.getElementById("transparency-graph").value);
+
+     //alert(transparencyOfGraph);
+     changeTransparencyInarrayColor(arrColor);
+     console.log("push "+arrColor);
+
      drawMe();
 }
 let addColor = document.getElementById("addColor");
 addColor.addEventListener("click",addColorFromPicker);
 function addColorFromPicker() {
     let myColor = document.getElementById("myColor");
-    let newValue = myColor.value;
+
+    transparencyOfGraph = String (document.getElementById("transparency-graph").value);
+    if (document.getElementById("transparency-graph").value<10){
+        transparencyOfGraph = "0"+String (document.getElementById("transparency-graph").value);
+    }
+    let newValue = myColor.value + transparencyOfGraph;
 
     strArr.push(newValue);
     document.getElementById("input22").value = strArr;
@@ -180,7 +203,34 @@ let dataClear = document.getElementById("dataClearBtn");
 dataClear.addEventListener("click",clearAllData);
 function clearAllData(){
     strArr = [];arrColor = [];arrData = [];
-    //document.getElementById("realData").value = "";
-    //document.getElementById("input22").value = "";
-    //document.getElementById("input11").value = "";
+    document.getElementById("realData").value = "";
+    document.getElementById("input22").value = "";
+    document.getElementById("input11").value = "";
 }
+// remove last two character from string
+let getStringMinusTransparent = function removeLatTwoChar(oldStr) {
+            var newStr = oldStr.substring(0, oldStr.length-2);
+            console.log("newstring " + newStr);
+            return newStr;
+        };
+
+function changeTransparencyInarrayColor(myArray){
+    if (myArray.length === 0){
+        alert("NO Data");
+        return;
+    }
+    let aaa1 = [];
+    for (let ii=0; ii<myArray.length; ii++){
+        transparencyOfGraph = String (document.getElementById("transparency-graph").value);
+        if (document.getElementById("transparency-graph").value<10){
+            transparencyOfGraph = "0"+String (document.getElementById("transparency-graph").value);
+        }
+
+        let aaa = getStringMinusTransparent(myArray[ii]) + transparencyOfGraph;
+        aaa1.push(aaa);
+        console.log(aaa1);
+    }
+    arrColor = aaa1;
+    document.getElementById("input22").value = arrColor;
+}
+
