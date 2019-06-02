@@ -2,6 +2,7 @@
 let myType;
 let createChart;
 let title = 'Predicted world population (millions) in 2050';
+let subTitleLabel = "Population (millions)";
 
 let arrA = ["Africa", "Asia", "Europe", "Latin America", "North America"];
 let arrColor = ["#ff008050","#b6e9c850","#c1afef50","#c68f6f50","#127dcd50"];
@@ -49,7 +50,7 @@ function drawMe() {
                 labels: arrA,
                 datasets: [
                     {
-                        label: "Population (millions)",
+                        label: subTitleLabel,
                         backgroundColor: arrColor,
                         data: arrData,
                         borderWidth:1,
@@ -99,7 +100,7 @@ pressBtn1.addEventListener("click",showConfig);
 function showConfig() {
     ccc.innerHTML = `
                      <span class="allSpan" id="title_1">Title:</span>
-                     <input type="text" id="tlt1" value="Predicted world population (millions) in 2050">
+                     <input type="text" id="tlt1" value=${title}>
                      <br>
                      <span class="allSpan">Tooltip Mode:</span>
                      <label>
@@ -270,7 +271,7 @@ dataImp.addEventListener("click",getCsvData);
 function getCsvData(){
     countryArr = [];
     valueArr = [];
-    d3.csv("myFile.csv", function(data) {
+    d3.csv("myFile1.csv", function(data) {
         for (var i = 0; i < data.length; i++) {
             //console.log(data[i].Country);
             countryArr.push(data[i].Country);
@@ -279,7 +280,11 @@ function getCsvData(){
             let c1 = getRandomColor();
             arrTempColor.push(c1);
             arrColor = addTransfarencyInRndomColorArr(arrTempColor);
+            title = data[0].title;
+            subTitleLabel = data[0].label;
+            //alert(title);
         }
+
     });
     console.log(countryArr);
     console.log(valueArr);
@@ -289,7 +294,7 @@ function getCsvData(){
     //arrColor = randomColor(arrA);
 
     console.log(arrColor);
-
+    console.log(title);
     //drawMe();
     setTimeout(drawMe,3000);
 }
