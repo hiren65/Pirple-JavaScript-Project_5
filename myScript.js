@@ -303,15 +303,17 @@ function getCsvData(){
             title = data[0].title;
             subTitleLabel = data[0].label;
             //alert(title);
+            document.getElementById("input11").value = countryArr;
+            document.getElementById("realData").value = valueArr;
         }
-
     });
     console.log(countryArr);
     console.log(valueArr);
 
     strArr = [];arrColor = [];arrData = [];
     arrA = countryArr;arrData = valueArr;
-    //arrColor = randomColor(arrA);
+    document.getElementById("input11").value = countryArr;
+        //arrColor = randomColor(arrA);
 
     console.log(arrColor);
     console.log(title);
@@ -391,6 +393,14 @@ window.onkeypress = function (e) {
         console.log(aa);
         if (aa === "unit"){
             filePath = "unit.csv";
+            charArr = [];
+            nn = 0;
+            return;
+        }else{
+            charArr = [];
+            filePath = "myFile1.csv";
+            console.log(filePath);
+            nn = 0;
         }
         return;
     }

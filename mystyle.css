@@ -181,3 +181,9 @@ output {
     height: 30px;
     color: #f5f5ff;
 }
+li{
+    color: red;
+}
+strong{
+    color: #f5f5ff;
+}
