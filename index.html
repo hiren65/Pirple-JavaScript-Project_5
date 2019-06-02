@@ -91,14 +91,34 @@
          </div>
 
          <div id="b5">
-             <h2>Select local CSV File and press Data Import Button:</h2>
-             <input id="csv" type="file">Select
+             <h2>Select local CSV File and press Data Apply Button:</h2>
+             <!--<input id="csv" type="file">Select
 
              <output id="out">
                  file contents will appear here
              </output>
-             <div id="list"></div>
+             <div id="list"></div>-->
+             <div id="import">
+                 <form class="form-horizontal well">
+                     <legend>
+                         <!--<h3>
+                             <div id="title">HTML5 File API</div>
+                         </h3>-->
+                     </legend>
+                     <fieldset>
+                         <label for="csvFileInput"> <strong>CSV File:</strong>
+                         </label>
+                         <input  type="file" id="csvFileInput" onchange="handleFiles(this.files)"
+                                accept=".csv" >
+                         <!--<button id="btn" onclick="loadHandler()"></button>-->
+
+                     </fieldset>
+                 </form>
+                 <div id="output">
+                 </div>
+             </div>
          </div>
+
 
 
      </div>

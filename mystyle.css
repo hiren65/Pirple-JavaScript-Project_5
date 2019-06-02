@@ -159,7 +159,7 @@ img{
 #b5{
     grid-row: 4/5;
     grid-column: 2/3;
-    background-color: #060606;
+    background-color: #000000;
 }
 h2{
     display: block;
@@ -184,6 +184,20 @@ output {
 li{
     color: red;
 }
+
 strong{
     color: #f5f5ff;
+}
+#import{
+    display: block;
+    width: 100%;
+    margin: auto;
+}
+#output{
+    color: #f5f5ff;
+    margin: 10px auto 10px 10px;
+}
+
+input#csvFileInput{
+    color: #f91513;
 }
