@@ -1,0 +1,44 @@
+Country,Value,title,label,
+Meters,100,Comparision Of Units,All Units,1
+Feet,30,9002,length,0
+Survey feet,1200,9003,length,12
+Clarke's foot,30,9005,length,0
+fathom,183,9014,length,2
+German legal metre,100,9031,length,1
+Links,792,9034,length,8
+Yards,91,9037,length,1
+Clarke's link,20,9039,length,0
+British foot (Sears 1922),1200,9041,length,12
+British link (Sears 1922),792,9043,length,8
+British yard (Benoit 1895 A),91,9050,length,1
+British foot (Benoit 1895 A),91,9051,length,1
+British link (Benoit 1895 A),20,9053,length,0
+British foot (Benoit 1895 B),1200,9061,length,12
+British foot (1865),91,9070,length,1
+Indian foot,1200,9080,length,12
+Indian foot (1937),30,9081,length,0
+Indian foot (1962),30,9082,length,0
+Indian foot (1975),30,9083,length,0
+Indian yard (1937),91,9085,length,1
+Indian yard (1962),91,9086,length,1
+Indian yard (1975),91,9087,length,1
+British foot (1936),30,9095,length,0
+Radian,100,9101,angle,1
+Degrees,314,9102,angle,3
+Grad,314,9105,angle,3
+Gon,314,9106,angle,3
+degree minute second,0,9107,angle,
+degree minute second hemisphere,0,9108,angle,
+Microradian,100,9109,angle,1
+sexagesimal DMS,0,9110,angle,
+sexagesimal DM,0,9111,angle,
+Centesimal_minute,314,9112,angle,3
+Centesimal_second,314,9113,angle,3
+Mil,314,9114,angle,3
+degree (supplier to define representation),314,9122,angle,3
+unity,100,9201,scale,1
+parts per million,100,9202,scale,1
+coefficient,0,9203,scale,
+Bin width 12.5 metres,1250,9209,length,13
+Bin width 6.25 metres,625,9210,length,6
+Bin width 3.125 metres,313,9211,length,3

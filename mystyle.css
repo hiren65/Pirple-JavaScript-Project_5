@@ -29,7 +29,7 @@ h1{
     background-color: #aaaaaa;
     color: gainsboro;
     grid-column: 1/2;
-    grid-row: 1/4;
+    grid-row: 1/5;
 }
 
 
@@ -61,10 +61,14 @@ option{
 #b3{
     display: block;
     background-color: cornsilk;
-
+    width: auto;
     grid-column: 2/4;
     grid-row: 2/3;
     min-height: 300px;
+}
+#myChart{
+    width: 100%;
+    height: auto;
 }
 #imageDiv{
     display: block;
@@ -150,4 +154,30 @@ img{
     margin-left: auto;
     margin-right: auto;
     //border: 1px solid white;
+}
+
+#b5{
+    grid-row: 4/5;
+    grid-column: 2/3;
+    background-color: #060606;
+}
+h2{
+    display: block;
+    text-align: center;
+    color: #f5f5ff;
+}
+output {
+    display: block;
+    margin:10px auto ;
+    font-family: monospace;
+    font-size: 1.22rem;
+    color: #f5f5ff;
+    width: 60%;
+
+}
+#csv{
+    margin-left: 10px;
+    width: 230px;
+    height: 30px;
+    color: #f5f5ff;
 }

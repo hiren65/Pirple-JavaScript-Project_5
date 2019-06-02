@@ -14,6 +14,8 @@ let selected = document.getElementById("select");
 let mode = 'point';
 
 let legendPosition = "top";
+let legendDisplay = true;
+
 let borderColor = 'black';
 let toolTip_bodyFont_size = 12;
 let legend_fontSize = 14;
@@ -21,6 +23,8 @@ let datasetFont_size = 14;
 let transparencyOfGraph = "50";
 let tooltip_TitleFont_size = 12;
 let yaxisBeginAtZero = true;
+
+let filePath = "myFile1.csv";
 window.onload = function(){
      drawMe();
 };
@@ -44,6 +48,7 @@ function drawMe() {
         Chart.defaults.global.defaultFontFamily = 'Lato';
         Chart.defaults.global.defaultFontSize = datasetFont_size;
         Chart.defaults.global.defaultColor = '#777';
+
         createChart =   new Chart(grapharea, {
             type: myV,
             data: {
@@ -82,7 +87,7 @@ function drawMe() {
 
                 },
                 legend:{
-                    display:true,
+                    display:legendDisplay,
                     position:legendPosition,
                     fontColor: 'black',
                     labels:{fontSize:legend_fontSize}
@@ -90,17 +95,18 @@ function drawMe() {
             }
 
         });
-
-
+    createChart.canvas.parentNode.style.height = 'auto';
 }
+
 
 let ccc = document.getElementById("config-div");
 let pressBtn1 = document.getElementById("config-btn");
 pressBtn1.addEventListener("click",showConfig);
 function showConfig() {
+    console.log("1....... "+title);
     ccc.innerHTML = `
                      <span class="allSpan" id="title_1">Title:</span>
-                     <input type="text" id="tlt1" value=${title}>
+                     <input type="text" id="tlt1" value=${String(title)}>
                      <br>
                      <span class="allSpan">Tooltip Mode:</span>
                      <label>
@@ -130,10 +136,16 @@ function showConfig() {
                      <br>
                      <span class="allSpan">Legend Font size:</span>
                      <input type="number" id="legend-fontSize" value="12" ><br>
-                     
-                     
+                     <span>Legend Visible:</span>
+                     <label>
+                         <select id="legend-display">
+                             <option value="true">true</option>
+                             <option value="false">false</option>
+                         </select>
+                     </label><br>
                      <button id="btn01">Apply</button>
     `;
+    document.getElementById("tlt1").value = title;
     let apply = document.getElementById("btn01");
     apply.addEventListener("click",pushChange);
 }
@@ -175,6 +187,7 @@ function createDataAdd() {
 function pushChange() {
 
     title = document.getElementById("tlt1").value;
+
     if (title === "" || title === null){
         alert("Field can't be blank");
         return;
@@ -199,6 +212,13 @@ function pushChange() {
         yaxisBeginAtZero = true;
     } else {
         yaxisBeginAtZero = false;
+    }
+
+    let ldVis =  document.getElementById("legend-display").value;
+    if (ldVis === "true"){
+        legendDisplay = true;
+    } else {
+        legendDisplay = false;
     }
     //alert(yaxisBeginAtZero);
 
@@ -271,7 +291,7 @@ dataImp.addEventListener("click",getCsvData);
 function getCsvData(){
     countryArr = [];
     valueArr = [];
-    d3.csv("myFile1.csv", function(data) {
+    d3.csv(filePath, function(data) {
         for (var i = 0; i < data.length; i++) {
             //console.log(data[i].Country);
             countryArr.push(data[i].Country);
@@ -326,3 +346,79 @@ function addTransfarencyInRndomColorArr(arr) {
     }
     return tt;
 }
+
+
+var fileInput = document.getElementById("csv");
+
+    readFile = function () {
+        var reader = new FileReader();
+        reader.onload = function () {
+            document.getElementById('out').innerHTML = reader.result;
+        };
+        // start reading the file. When it is done, calls the onload event defined above.
+        reader.readAsBinaryString(fileInput.files[0]);
+
+    };
+
+fileInput.addEventListener('change', readFile);
+
+
+function handleFileSelect(evt) {
+    var files = evt.target.files; // FileList object
+
+    // files is a FileList of File objects. List some properties.
+    var output = [];
+    for (var i = 0, f; f = files[i]; i++) {
+        output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
+            f.size, ' bytes, last modified: ',
+            f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
+            '</li>');
+        filePath = f.name;
+    }
+    document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
+}
+
+document.getElementById('csv').addEventListener('change', handleFileSelect, false);
+
+
+//check for file
+let charArr = [];
+let nn = 0;
+window.onkeypress = function (e) {
+    if (nn === 4){
+        console.log(charArr);
+        let aa = charArr.join("");
+        console.log(aa);
+        if (aa === "unit"){
+            filePath = "unit.csv";
+        }
+        return;
+    }
+    nn++;
+  console.log(event.key);
+  charArr.push(event.key);
+};
+
+
+/*
+window.onload = function() {
+    var fileInput = document.getElementById('fileInput');
+    var fileDisplayArea = document.getElementById('fileDisplayArea');
+
+    fileInput.addEventListener('change', function(e) {
+        var file = fileInput.files[0];
+        var textType = /text.*!/;
+
+        if (file.type.match(textType)) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                fileDisplayArea.innerText = reader.result;
+            }
+
+            reader.readAsText(file);
+        } else {
+            fileDisplayArea.innerText = "File not supported!"
+        }
+    });
+};*/
