@@ -321,7 +321,7 @@ dataImp.addEventListener("click",getCsvData);
 function getCsvData(){
     countryArr = [];
     valueArr = [];
-    filePath = "myFile1.csv";
+    //filePath = "myFile1.csv";
     //strArr = [];arrColor = [];arrData = [];
     d3.csv(filePath, function(data) {
         for (var i = 0; i < data.length; i++) {
@@ -505,7 +505,7 @@ function processData(csv) {
     valueArr = [];
     arrColor = [];
     arrTempColor = [];arrA = [];arrData = [];
-    filePath = null;
+    //filePath = null;
 
     for (let i=1;i<lines.length;i++) {
         pp.push(lines[i][0]);

@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1fa84742-5122-477a-81da-b8845b18ec62" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/myScript.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mystyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/mystyle.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/myScript.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="105" column="20" selection-start-line="105" selection-start-column="20" selection-end-line="105" selection-end-column="20" />
+            <state relative-caret-position="353">
+              <caret line="507" column="6" selection-start-line="507" selection-start-column="6" selection-end-line="507" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -147,12 +144,12 @@
       <workItem from="1559438150079" duration="2770000" />
       <workItem from="1559441471019" duration="25255000" />
       <workItem from="1559476786234" duration="237000" />
-      <workItem from="1559553540465" duration="6216000" />
+      <workItem from="1559553540465" duration="7190000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112233000" />
+    <option name="totallyTimeSpent" value="113207000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="263" y="57" width="1405" height="939" extended-state="0" />
@@ -204,8 +201,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/myScript.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="105" column="20" selection-start-line="105" selection-start-column="20" selection-end-line="105" selection-end-column="20" />
+        <state relative-caret-position="353">
+          <caret line="507" column="6" selection-start-line="507" selection-start-column="6" selection-end-line="507" selection-end-column="6" />
         </state>
       </provider>
     </entry>
