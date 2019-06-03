@@ -103,6 +103,7 @@ let ccc = document.getElementById("config-div");
 let pressBtn1 = document.getElementById("config-btn");
 pressBtn1.addEventListener("click",showConfig);
 function showConfig() {
+    apply1.remove();
     console.log("1....... "+title);
     ccc.innerHTML = `
                      <span class="allSpan" id="title_1">Title:</span>
@@ -185,7 +186,6 @@ function createDataAdd() {
 
 // config
 function pushChange() {
-
     title = document.getElementById("tlt1").value;
 
     if (title === "" || title === null){
@@ -228,6 +228,36 @@ function pushChange() {
 
      drawMe();
 }
+let apply1 = document.getElementById("btn011");
+apply1.addEventListener("click",pushChange1);
+
+function pushChange1(){
+
+    //mode = document.getElementById("tooltips").value;
+    //legendPosition = document.getElementById("legend").value;
+
+
+
+    borderColor = document.getElementById("border-color").value;
+    //////////////////////////////////////////////////////////
+    //legend_fontSize = parseInt( document.getElementById("legend-fontSize").value);
+    /////////////////////////////////////////////////////////
+    datasetFont_size = parseInt( document.getElementById("dataset-font-size").value);
+
+    //tooltip_TitleFont_size =parseInt( document.getElementById("toolTip-title-fontSize").value);
+    transparencyOfGraph = String (document.getElementById("transparency-graph").value);
+    changeTransparencyInarrayColor(arrColor);
+    console.log("push "+arrColor);
+    let yaxisBeginAtZero1 =  document.getElementById("selectYaxis").value;
+    if (yaxisBeginAtZero1 === "yes"){
+        yaxisBeginAtZero = true;
+    } else {
+        yaxisBeginAtZero = false;
+    }
+    drawMe();
+
+}
+
 let addColor = document.getElementById("addColor");
 addColor.addEventListener("click",addColorFromPicker);
 function addColorFromPicker() {
@@ -291,6 +321,8 @@ dataImp.addEventListener("click",getCsvData);
 function getCsvData(){
     countryArr = [];
     valueArr = [];
+    filePath = "myFile1.csv";
+    //strArr = [];arrColor = [];arrData = [];
     d3.csv(filePath, function(data) {
         for (var i = 0; i < data.length; i++) {
             //console.log(data[i].Country);
@@ -472,7 +504,9 @@ function processData(csv) {
     countryArr = [];
     valueArr = [];
     arrColor = [];
-    arrTempColor = [];
+    arrTempColor = [];arrA = [];arrData = [];
+    filePath = null;
+
     for (let i=1;i<lines.length;i++) {
         pp.push(lines[i][0]);
         dd.push(lines[i][1]);
@@ -495,9 +529,11 @@ function processData(csv) {
     document.getElementById("input11").value = countryArr;
     document.getElementById("realData").value = valueArr;
     document.getElementById("input22").value = arrColor;
+    //strArr = [];arrColor = [];arrData = [];
+    arrA = countryArr; arrData = valueArr;
     //countryArr = pp;valueArr = dd;
     //drawMe();
-    //setTimeout(drawMe,3000);
+    setTimeout(drawMe,3000);
     //console.log(countryArr);console.log(valueArr);
     //console.log(arrColor);
     drawOutput(lines);
