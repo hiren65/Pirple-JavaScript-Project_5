@@ -25,6 +25,12 @@ let tooltip_TitleFont_size = 12;
 let yaxisBeginAtZero = true;
 
 let filePath = "myFile1.csv";
+
+let background_color = arrColor;
+let schemes = 'tableau.HueCircle19';
+
+let tito = [];
+
 window.onload = function(){
      drawMe();
 };
@@ -56,7 +62,7 @@ function drawMe() {
                 datasets: [
                     {
                         label: subTitleLabel,
-                        backgroundColor: arrColor,
+                        backgroundColor: background_color,
                         data: arrData,
                         borderWidth:1,
                         borderColor:borderColor,
@@ -91,12 +97,24 @@ function drawMe() {
                     position:legendPosition,
                     fontColor: 'black',
                     labels:{fontSize:legend_fontSize}
+                },
+                plugins: {
+
+                    colorschemes: {
+
+                        scheme: schemes,
+                        schemeColors: tito
+
+                    }
+
                 }
             }
 
         });
     createChart.canvas.parentNode.style.height = 'auto';
+    //Chart.defaults.global.scaleLineColor = 'tranparent';
 }
+
 
 
 let ccc = document.getElementById("config-div");
@@ -144,6 +162,19 @@ function showConfig() {
                              <option value="false">false</option>
                          </select>
                      </label><br>
+                     <label><br>
+                     <input type="text" id="color-theme-input" placeholder="paste scheme">
+                         <select id="plugin-colors">
+                             <option value="rendom" >rendom</option>
+                             <option value="tableau.Tableau10">tableau.Tableau10</option>
+                             <option value="brewer.SetThree12">brewer.SetThree12</option>
+                             <option value="tableau.ColorBlind10">tableau.ColorBlind10</option>
+                             <option value="office.Excel16">office.Excel16</option>
+                             <option value="brewer.SetThree12">brewer.SetThree12</option>
+                             <option value="input-box" >Above Input</option>
+                         </select>
+                     </label><br>
+                     <span id="colorLink"><a  href="https://nagix.github.io/chartjs-plugin-colorschemes/colorchart.html" target="_blank">More Plugin Color</a></span>
                      <button id="btn01">Apply</button>
     `;
     document.getElementById("tlt1").value = title;
@@ -221,11 +252,42 @@ function pushChange() {
         legendDisplay = false;
     }
     //alert(yaxisBeginAtZero);
+    let pluginColor = document.getElementById("plugin-colors").value;
+    let color_theme_input = document.getElementById("color-theme-input").value;
+    //alert(pluginColor);
+    if (pluginColor === "rendom"){
+        background_color = arrColor;
+        schemes = undefined;
+        changeTransparencyInarrayColor(arrColor);
+        console.log("push "+arrColor);
+        drawMe();
+        return;
+
+    }
+    if (pluginColor === "input-box"){
+        background_color = undefined;
+        schemes = color_theme_input;
+        console.log( "hhhhhh  " +color_theme_input);
+        //alert(pluginColor1);
+        changeTransparencyInarrayColor(arrColor);
+        console.log("push "+arrColor);
+        drawMe();
+        return;
+    }
+
+     else
+    {
+        background_color = undefined;
+        schemes = pluginColor;
+        //alert(color_theme_input);
+        console.log( "hhhhhh  " + schemes + " kkjkj");
+        //changeTransparencyInarrayColor(pluginColor);
+    }
+
 
      //alert(transparencyOfGraph);
      changeTransparencyInarrayColor(arrColor);
      console.log("push "+arrColor);
-
      drawMe();
 }
 let apply1 = document.getElementById("btn011");
@@ -254,6 +316,8 @@ function pushChange1(){
     } else {
         yaxisBeginAtZero = false;
     }
+
+
     drawMe();
 
 }
@@ -299,7 +363,9 @@ function changeTransparencyInarrayColor(myArray){
         if (document.getElementById("transparency-graph").value<10){
             transparencyOfGraph = "0"+String (document.getElementById("transparency-graph").value);
         }
-
+        if (document.getElementById("transparency-graph").value>100){
+            transparencyOfGraph = "99";
+        }
         let aaa = getStringMinusTransparent(myArray[ii]) + transparencyOfGraph;
         aaa1.push(aaa);
         console.log(aaa1);
@@ -323,7 +389,9 @@ function getCsvData(){
     valueArr = [];
     //filePath = "myFile1.csv";
     //strArr = [];arrColor = [];arrData = [];
+
     d3.csv(filePath, function(data) {
+
         for (var i = 0; i < data.length; i++) {
             //console.log(data[i].Country);
             countryArr.push(data[i].Country);
@@ -337,7 +405,9 @@ function getCsvData(){
             //alert(title);
             document.getElementById("input11").value = countryArr;
             document.getElementById("realData").value = valueArr;
+
         }
+
     });
     console.log(countryArr);
     console.log(valueArr);
@@ -350,7 +420,11 @@ function getCsvData(){
     console.log(arrColor);
     console.log(title);
     //drawMe();
-    setTimeout(drawMe,3000);
+    document.getElementById("csvFileInput").innerText = " ";
+    document.getElementById("output").innerHTML = "";
+
+
+    setTimeout(drawMe,1000);
 }
 
 function randomColor(arr) {
@@ -466,10 +540,12 @@ window.onload = function() {
 };*/
 function handleFiles(files) {
     // Check for the various File API support.
+
+    console.log(files);
     if (window.FileReader) {
         // FileReader are supported.
         getAsText(files[0]);
-        //loadHandler();
+
 
     } else {
         alert('FileReader are not supported in this browser.');
@@ -478,6 +554,7 @@ function handleFiles(files) {
 
 
 function getAsText(fileToRead) {
+    console.log(fileToRead);
     var reader = new FileReader();
     // Handle errors load
     reader.onload = loadHandler;
@@ -492,6 +569,7 @@ function loadHandler(event) {
 }
 
 function processData(csv) {
+    //alert(csv);
     var allTextLines = csv.split(/\r\n|\n/);
     var lines = [];
     while (allTextLines.length) {
@@ -530,10 +608,11 @@ function processData(csv) {
     document.getElementById("realData").value = valueArr;
     document.getElementById("input22").value = arrColor;
     //strArr = [];arrColor = [];arrData = [];
-    arrA = countryArr; arrData = valueArr;
+    arrA = countryArr; arrData = valueArr;background_color = arrColor;
     //countryArr = pp;valueArr = dd;
     //drawMe();
-    setTimeout(drawMe,3000);
+
+    setTimeout(drawMe,1000);
     //console.log(countryArr);console.log(valueArr);
     //console.log(arrColor);
     drawOutput(lines);
@@ -560,7 +639,7 @@ function processDataAsObj(csv){
 }
 
 function errorHandler(evt) {
-    if(evt.target.error.name == "NotReadableError") {
+    if(evt.target.error.name === "NotReadableError") {
         alert("Canno't read file !");
     }
 }

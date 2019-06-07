@@ -10,6 +10,7 @@
     <!-- Load d3.js -->
     <script src="https://d3js.org/d3.v4.js"></script>
 
+
     <link rel="stylesheet" href="mystyle.css">
 </head>
 <body>
@@ -88,7 +89,7 @@
              <button id="dataApplyBtn">Data Apply</button>
              <button id="dataClearBtn">Data Clear</button><br>
              <span>Import Defoult file from myFile1.csv</span>
-             <button id="dataImport">Data Import</button>
+             <button id="dataImport"  >Data Import</button>
          </div>
 
          <div id="b5">
@@ -107,7 +108,7 @@
                          </h3>-->
                      </legend>
                      <fieldset>
-                         <label for="csvFileInput"> <strong>CSV File:</strong>
+                         <label for="csvFileInput"> <strong>Import CSV File:</strong>
                          </label>
                          <input  type="file" id="csvFileInput" onchange="handleFiles(this.files)"
                                 accept=".csv" >
@@ -138,7 +139,9 @@
      <footer >
          <!--<script src="node_modules/chart.js/dist/Chart.js"></script>-->
          <!--<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>-->
+         <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-colorschemes"></script>
          <script src="myScript.js"></script>
+
      </footer>
 </body>
 </html>
