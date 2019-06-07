@@ -60,7 +60,7 @@ option{
 }
 #b3{
     display: block;
-    background-color: cornsilk;
+    background-color: #fdfdfd;
     width: auto;
     grid-column: 2/4;
     grid-row: 2/3;

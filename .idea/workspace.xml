@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1fa84742-5122-477a-81da-b8845b18ec62" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/myScript.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mystyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/mystyle.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -22,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="112" column="49" selection-start-line="112" selection-start-column="49" selection-end-line="112" selection-end-column="61" />
+            <state relative-caret-position="2288">
+              <caret line="104" column="29" lean-forward="true" selection-start-line="104" selection-start-column="29" selection-end-line="104" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -31,7 +28,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myScript.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6226">
+            <state>
               <caret column="7" selection-start-column="2" selection-end-column="7" />
             </state>
           </provider>
@@ -40,7 +37,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mystyle.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
+            <state relative-caret-position="3146">
               <caret line="197" column="8" selection-start-line="197" selection-start-column="8" selection-end-line="197" selection-end-column="8" />
             </state>
           </provider>
@@ -87,13 +84,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/../../d3/chart_example_from_d3-graph-gallery.html" />
-        <option value="$PROJECT_DIR$/mystyle.css" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/myScript.js" />
+        <option value="$PROJECT_DIR$/mystyle.css" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="132" />
     <option name="width" value="1480" />
     <option name="height" value="939" />
@@ -154,12 +151,13 @@
       <workItem from="1559553540465" duration="7417000" />
       <workItem from="1559643414055" duration="9217000" />
       <workItem from="1559866161487" duration="27784000" />
-      <workItem from="1559899088982" duration="2242000" />
+      <workItem from="1559899088982" duration="2860000" />
+      <workItem from="1559902129890" duration="264000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152677000" />
+    <option name="totallyTimeSpent" value="153559000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="132" y="0" width="1480" height="939" extended-state="0" />
@@ -204,24 +202,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mystyle.css">
+    <entry file="file://$PROJECT_DIR$/myScript.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="197" column="8" selection-start-line="197" selection-start-column="8" selection-end-line="197" selection-end-column="8" />
+        <state>
+          <caret column="7" selection-start-column="2" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myScript.js">
+    <entry file="file://$PROJECT_DIR$/mystyle.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6226">
-          <caret column="7" selection-start-column="2" selection-end-column="7" />
+        <state relative-caret-position="3146">
+          <caret line="197" column="8" selection-start-line="197" selection-start-column="8" selection-end-line="197" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="112" column="49" selection-start-line="112" selection-start-column="49" selection-end-line="112" selection-end-column="61" />
+        <state relative-caret-position="2288">
+          <caret line="104" column="29" lean-forward="true" selection-start-line="104" selection-start-column="29" selection-end-line="104" selection-end-column="29" />
         </state>
       </provider>
     </entry>
