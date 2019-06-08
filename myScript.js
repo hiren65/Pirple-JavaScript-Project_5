@@ -163,7 +163,12 @@ function showConfig() {
                          </select>
                      </label><br>
                      <label><br>
-                     <input type="text" id="color-theme-input" placeholder="paste scheme">
+                     
+                         <h3>
+                             <div id="plugin-title">Color Selection Box</div>
+                         </h3>
+                     <br>
+                     <!--<input type="text" id="color-theme-input" placeholder="paste scheme">-->
                          <select id="plugin-colors">
                              <option value="rendom" >rendom</option>
                              <option value="tableau.Tableau10">tableau.Tableau10</option>
@@ -175,6 +180,8 @@ function showConfig() {
                          </select>
                      </label><br>
                      <span id="colorLink"><a  href="https://nagix.github.io/chartjs-plugin-colorschemes/colorchart.html" target="_blank">More Plugin Color</a></span>
+                     <br>
+                     <input type="text" id="color-theme-input" placeholder="paste scheme">
                      <button id="btn01">Apply</button>
     `;
     document.getElementById("tlt1").value = title;

@@ -217,3 +217,11 @@ input#csvFileInput{
     display: block;
     margin: 5px auto;
 }
+#plugin-title{
+    display: block;
+    font-size: 1.00rem;
+    color: #f6121f;
+    margin: 5px auto 5px auto;
+    /*border: 1px solid black;*/
+    text-align: center;
+}
